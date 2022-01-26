@@ -1,0 +1,83 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+<div class="navbar">
+  <a href="http://127.0.0.1:5000/home">Home</a>
+  <div class="dropdown">
+    <button class="dropbtn">Customer Management 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="http://127.0.0.1:5000/create_customer">Create Customer</a>
+      <a href="http://127.0.0.1:5000/update_customer">Update Customer</a>
+      <a href="http://127.0.0.1:5000/delete_customer">Delete Customer</a>
+	  <a href="http://127.0.0.1:5000/search_customer">Search Customer</a>
+	  <a href="http://127.0.0.1:5000/customer_status">Customer Status</a>
+    </div>
+  </div> 
+  <div class="dropdown">
+    <button class="dropbtn">Account Management 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="http://127.0.0.1:5000/create_account">Create Account</a>
+      <a href="http://127.0.0.1:5000/delete_account">Delete Account</a>
+	  <a href="http://127.0.0.1:5000/search_account">Search Account</a>
+	  <a href="http://127.0.0.1:5000/account_status">Account Status</a>
+    </div>
+  </div> 
+  <div class="dropdown">
+    <button class="dropbtn">Account Operations 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="http://127.0.0.1:5000/withdraw">WithDraw</a>
+      <a href="http://127.0.0.1:5000/deposit">Deposit</a>
+	  <a href="http://127.0.0.1:5000/transfer">Transfer</a>
+    </div>
+  </div>
+  <a href="http://127.0.0.1:5000/viewstatement">Veiw Statement</a>
+  <a href="http://127.0.0.1:5000">Logout</a>
+</div>
+<h3 style="text-align: center"> Deposit Money</h3>
+<form method="POST" action="http://127.0.0.1:5000/store_deposit" id="cc-form" class="login-form" autocomplete="off">
+		<table align="center">
+		<tr>
+			<th align="left">
+				<span>Customer SSN_ID:</span>
+			</th>
+			<td align="left">
+				<input type="text" name="cssnid" required>
+			</td>
+		</tr>
+		<tr>
+			<th align="left">
+				<label>Account ID:</label>
+			</th>
+			<td align="left">
+				<input type="text" name="accountid" required>
+			</td>
+		</tr>
+		<tr>
+			<th align="left">
+				<label>Deposit Amount:</label>   
+			</th>
+			<td align="left">
+				<input type="integer" name="damount" required>
+			</td> 
+		</tr>
+		<tr>
+			<th align="left">
+				<input type = "submit" value = "Deposit">  
+			</th>
+			<td align="left">
+				<input type="reset" value="Reset" >
+			</td>
+		</tr>
+	</table>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+<div class="navbar">
+  <a href="#home">Home</a>
+  <div class="dropdown">
+    <button class="dropbtn">Customer Management 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="http://127.0.0.1:5000/create_customer">Create Customer</a>
+      <a href="http://127.0.0.1:5000/update_customer">Update Customer</a>
+      <a href="http://127.0.0.1:5000/delete_customer">Delete Customer</a>
+	  <a href="http://127.0.0.1:5000/search_customer">Search Customer</a>
+    </div>
+  </div> 
+  <div class="dropdown">
+    <button class="dropbtn">Account Management 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="http://127.0.0.1:5000/create_account">Create Account</a>
+      <a href="#">Delete Account</a>
+	  <a href="#">Search Account</a>
+    </div>
+  </div> 
+  <div class="dropdown">
+    <button class="dropbtn">Account Operations 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="#">WithDraw</a>
+      <a href="#">Deposit</a>
+	  <a href="#">Transfer</a>
+    </div>
+  </div>
+  <a href="#">Veiw Statement</a>
+  <a href="http://127.0.0.1:5000">Logout</a>
+</div>
+<h3 style="text-align: center"> Create Account</h3>
+<form method="POST" action="http://127.0.0.1:5000/store_account" id="cc-form" class="login-form" autocomplete="off">
+	<table align="center">
+		<tr>
+			<th align="left">
+				<span>Customer SSN_ID:</span>
+			</th>
+			<td align="left">
+				<input type="text" name="cssnid" required>
+			</td>
+		</tr>
+		<tr>
+			<th align="left">
+				<label>Account Type:</label>
+			</th>
+			<td align="left">
+				<select name = "accounttype">
+					<option value="savings">Savings</option>
+					<option value="current">Current</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<th align="left">
+				<label>Deposit Amount:</label>   
+			</th>
+			<td align="left">
+				<input type="integer" name="amount" required>
+			</td>
+		</tr>
+		<tr>
+			<th align="left">
+				<input type = "submit" value = "submit">  
+			</th>
+			<td align="left">
+				<input type="reset" value="Reset" >
+			</td>
+		</tr>
+	</table>
+</form>
+
+</body>
+</html>

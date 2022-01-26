@@ -1,0 +1,135 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+<div class="navbar">
+  <a href="http://127.0.0.1:5000/home">Home</a>
+  <div class="dropdown">
+    <button class="dropbtn">Customer Management 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="http://127.0.0.1:5000/create_customer">Create Customer</a>
+      <a href="http://127.0.0.1:5000/update_customer">Update Customer</a>
+      <a href="http://127.0.0.1:5000/delete_customer">Delete Customer</a>
+	  <a href="http://127.0.0.1:5000/search_customer">Search Customer</a>
+	  <a href="http://127.0.0.1:5000/customer_status">Customer Status</a>
+    </div>
+  </div> 
+  <div class="dropdown">
+    <button class="dropbtn">Account Management 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="http://127.0.0.1:5000/create_account">Create Account</a>
+      <a href="http://127.0.0.1:5000/delete_account">Delete Account</a>
+	  <a href="http://127.0.0.1:5000/search_account">Search Account</a>
+	  <a href="http://127.0.0.1:5000/account_status">Account Status</a>
+    </div>
+  </div> 
+  <div class="dropdown">
+    <button class="dropbtn">Account Operations 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="http://127.0.0.1:5000/withdraw">WithDraw</a>
+      <a href="http://127.0.0.1:5000/deposit">Deposit</a>
+	  <a href="http://127.0.0.1:5000/transfer">Transfer</a>
+    </div>
+  </div>
+  <a href="http://127.0.0.1:5000/viewstatement">Veiw Statement</a>
+  <a href="http://127.0.0.1:5000">Logout</a>
+</div>
+<h3 style="text-align: center">Customer Status</h3>
+<form method="POST" action="http://127.0.0.1:5000/search_customer" id="cc-form" class="login-form" autocomplete="off">
+	<table align="center">
+		<tr>
+			<th align="left">
+				<span>Customer SSN_ID:</span>
+			</th>
+			<td align="left">
+				<span>{{ custid }}</span>
+			</td>
+		</tr>
+			<th align="left">
+				<label>Customer Name:</label>
+			</th>
+			<td align="left">
+				<span>{{ result['customername'] }}</span>
+			</td>
+		<tr>
+			<th align="left">
+				<label >Age:</label>
+			</th>
+			<td align="left">
+				<span>{{ result['age'] }}</span>
+			</td>
+		</tr>
+		<tr>
+			<th align="left">
+				<label>Addres 1:</label> 
+			</th>
+			<td align="left">
+				<span>{{ result['address1'] }}</span>
+			</td>
+		</tr>
+		<tr>
+			<th align="left">
+				<label>Addres 2:</label> 
+			</th>
+			<td align="left">
+				<span>{{ result['address2'] }}</span>
+			</td>
+		</tr>
+		<tr>
+			<th align="left">
+				<label>City:</label>  
+			</th>
+			<td align="left">
+				<span>{{ result['city'] }}</span>
+			</td>
+		</tr>
+		<tr>
+			<th align="left">
+				<label>State:</label>   
+			</th>
+			<td align="left">
+				<span>{{ result['state'] }}</span>
+			</td>
+		</tr>
+		<tr>
+			<th align="left">
+				<label>Contact No:</label>   
+			</th>
+			<td align="left">
+				<span>{{ result['phno'] }}</span>
+			</td>
+		</tr>
+		<tr>
+			<th align="left">
+				<label>Status:</label>   
+			</th>
+			<td align="left">
+				<span>{{ result['status'] }}</span>
+			</td>
+		</tr>
+		<tr>
+			<th align="left">
+				<label>Last Modified:</label>   
+			</th>
+			<td align="left">
+				<span>{{ result['lastupdated'] }}</span>
+			</td>
+		</tr>
+		<tr>
+			<th align="left">
+				<input type = "submit" value = "Search">  
+			</th>
+			
+		</tr>
+	</table>
+</form>
+
+</body>
+</html>

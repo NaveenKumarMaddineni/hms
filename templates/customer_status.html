@@ -1,0 +1,105 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+<div class="navbar">
+  <a href="http://127.0.0.1:5000/home">Home</a>
+  <div class="dropdown">
+    <button class="dropbtn">Customer Management 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="http://127.0.0.1:5000/create_customer">Create Customer</a>
+      <a href="http://127.0.0.1:5000/update_customer">Update Customer</a>
+      <a href="http://127.0.0.1:5000/delete_customer">Delete Customer</a>
+	  <a href="http://127.0.0.1:5000/search_customer">Search Customer</a>
+	  <a href="http://127.0.0.1:5000/customer_status">Customer Status</a>
+    </div>
+  </div> 
+  <div class="dropdown">
+    <button class="dropbtn">Account Management 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="http://127.0.0.1:5000/create_account">Create Account</a>
+      <a href="http://127.0.0.1:5000/delete_account">Delete Account</a>
+	  <a href="http://127.0.0.1:5000/search_account">Search Account</a>
+	  <a href="http://127.0.0.1:5000/account_status">Account Status</a>
+    </div>
+  </div> 
+  <div class="dropdown">
+    <button class="dropbtn">Account Operations 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="http://127.0.0.1:5000/withdraw">WithDraw</a>
+      <a href="http://127.0.0.1:5000/deposit">Deposit</a>
+	  <a href="http://127.0.0.1:5000/transfer">Transfer</a>
+    </div>
+  </div>
+  <a href="http://127.0.0.1:5000/viewstatement">Veiw Statement</a>
+  <a href="http://127.0.0.1:5000">Logout</a>
+</div>
+<h3 style="text-align: center">Customer Search Result</h3>
+
+	<table align="center" border= 10px>
+		<tr>
+			<th align="left">
+				<span>Customer SSN_ID</span>
+			</th>
+			<th align="left">
+				<span>Customer Name</span>
+			</th>
+			<th align="left">
+				<span>Age</span>
+			</th>
+			<th align="left">
+				<span>City</span>
+			</th>
+			<th align="left">
+				<span>State</span>
+			</th>
+			<th align="left">
+				<span>Status</span>
+			</th>
+			<th align="left">
+				<span>Last Updated</span>
+			</th>
+			<th align="left">
+				<span>View Profile</span>
+			</th>
+		</tr>
+		{% for cd,values in result.items() %}
+			
+			<tr>
+				<th align="left">
+				<span>{{ cd }}</span>
+			</th>
+			<td align="left">
+				<span>{{ values["customername"] }}</span>
+			</td>
+			<td align="left">
+				<span>{{ values['age'] }}</span>
+			</td>
+			<td align="left">
+				<span>{{ values['city'] }}</span>
+			</td>
+			<td align="left">
+				<span>{{ values['state'] }}</span>
+			</td>
+			<td align="left">
+				<span>{{ values['status'] }}</span>
+			</td>
+			<td align="left">
+				<span>{{ values['lastupdated'] }}</span>
+			</td>
+			<td align="left">
+				<span><a href= "{{ url_for('customer', cid = cd ) }}" >click here</a></span>
+			</td>
+			</tr>
+		{% endfor %}
+	</table>
+
+</body>
+</html>

@@ -1,0 +1,122 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+<div class="navbar">
+  <a href="http://127.0.0.1:5000/home">Home</a>
+  <div class="dropdown">
+    <button class="dropbtn">Customer Management 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="http://127.0.0.1:5000/create_customer">Create Customer</a>
+      <a href="http://127.0.0.1:5000/update_customer">Update Customer</a>
+      <a href="http://127.0.0.1:5000/delete_customer">Delete Customer</a>
+	  <a href="http://127.0.0.1:5000/search_customer">Search Customer</a>
+	  <a href="http://127.0.0.1:5000/customer_status">Customer Status</a>
+    </div>
+  </div> 
+  <div class="dropdown">
+    <button class="dropbtn">Account Management 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="http://127.0.0.1:5000/create_account">Create Account</a>
+      <a href="http://127.0.0.1:5000/delete_account">Delete Account</a>
+	  <a href="http://127.0.0.1:5000/search_account">Search Account</a>
+	  <a href="http://127.0.0.1:5000/account_status">Account Status</a>
+    </div>
+  </div> 
+  <div class="dropdown">
+    <button class="dropbtn">Account Operations 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="http://127.0.0.1:5000/withdraw">WithDraw</a>
+      <a href="http://127.0.0.1:5000/deposit">Deposit</a>
+	  <a href="http://127.0.0.1:5000/transfer">Transfer</a>
+    </div>
+  </div>
+  <a href="http://127.0.0.1:5000/viewstatement">Veiw Statement</a>
+  <a href="http://127.0.0.1:5000">Logout</a>
+</div>
+<h3 style="text-align: center"> Account Details</h3>
+<form method="POST" action="http://127.0.0.1:5000/search_customer" id="cc-form" class="login-form" autocomplete="off">
+	<table align="center">
+		<tr>
+			<th align="left">
+				<span>Customer SSN_ID:</span>
+			</th>
+			<td align="left">
+				<span>{{ custid }}</span>
+			</td>
+		</tr>
+			<th align="left">
+				<label>Account ID:</label>
+			</th>
+			<td align="left">
+				<span>{{ result['accountid'] }}</span>
+			</td>
+		<tr>
+			<th align="left">
+				<label >Account Type:</label>
+			</th>
+			<td align="left">
+				<span>{{ result['accounttype'] }}</span>
+			</td>
+		</tr>
+		<tr>
+			<th align="left">
+				<label>Amount:</label> 
+			</th>
+			<td align="left">
+				<span>{{ result['amount'] }}</span>
+			</td>
+		</tr>
+		
+		
+	</table>
+	<h3 style="text-align: center"> Statement</h3>
+	<table align="center">
+		<tr>
+			<th>
+				<label>Date Time</label>
+			</th>
+			<th>
+				<label>Credited/Debited</label>
+			</th>
+			<th>
+				<label>Cr/Dr Amount</label>
+			</th>
+			<th>
+				<label>RemainingAmount</label>
+			</th>
+		</tr>
+	{% for key,values in result['statement'].items() %}
+		<tr>
+			<th>
+				<label>{{ key }}</label>
+			</th>
+			<td>
+				<label>{{ values['operation'] }}</label>
+			</td>
+			<td>
+				<label>{{ values['opamount'] }}</label>
+			</td>
+			<td>
+				<labe>{{ values['remainingamount'] }}</label>
+			</td>
+		</tr>
+		
+	{% endfor %}
+	<tr>
+			<th align="left">
+				<input type = "submit" value = "Search Account">  
+			</th>
+		</tr>
+	</table>
+</form>
+
+</body>
+</html>

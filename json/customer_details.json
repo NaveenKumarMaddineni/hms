@@ -1,0 +1,75 @@
+{
+  "1": {
+    "customername": "Vennapusa Akhil Reddy",
+    "age": "21",
+    "address1": "5-16/1,Tellapem,Yerrupalem",
+    "address2": "poi",
+    "city": "Khammam",
+    "state": "Telangana",
+    "phno": "2515",
+    "status": "Active",
+    "lastupdated": "06/16/20  12:23:29",
+    "account": {
+      "accountid": "12020",
+      "amount": "9890",
+      "accounttype": "current",
+      "statement": {
+        "16/06/2020 12:27:42": {
+          "operation": "Deposited",
+          "opamount": "10000",
+          "remainingamount": "10000"
+        },
+        "16/06/2020 12:29:07": {
+          "operation": "Withdraw",
+          "opamount": "100",
+          "remainingamount": "9900"
+        },
+        "16/06/2020 13:53:43": {
+          "operation": "Tranfer220202",
+          "opamount": "10",
+          "remainingamount": "9890"
+        }
+      }
+    }
+  },
+  "2": {
+    "customername": "Vennapusa",
+    "age": "25",
+    "address1": "5-16/1,Tellapem,Yerrupalem",
+    "address2": "poi",
+    "city": "Khammam",
+    "state": "Telangana",
+    "phno": "3069",
+    "status": "Active",
+    "lastupdated": "06/16/20  12:24:32",
+    "account": {
+      "accountid": "22020",
+      "amount": "1000",
+      "accounttype": "savings",
+      "statement": {
+        "16/06/2020 12:27:56": {
+          "operation": "Deposited",
+          "opamount": "1000",
+          "remainingamount": "1000"
+        }
+      }
+    }
+  },
+  "3": {
+    "customername": "c",
+    "age": "56",
+    "address1": "poi",
+    "address2": "iop",
+    "city": "p",
+    "state": "o",
+    "phno": "143",
+    "status": "DeActive",
+    "lastupdated": "06/16/20  17:21:07",
+    "account": {
+      "accountid": "",
+      "amount": "0",
+      "accounttype": "",
+      "statement": {}
+    }
+  }
+}
